@@ -2,7 +2,13 @@
 
 The FeedHenry Custom LDAP Connector.
 
-# Custom LDAP Connector API
+# Required Environment Variables
+
+* LDAP_URL : The URL of the LDAP server (including the ldap protocol). E.g. `ldap://testing.feedhenry.com`
+* DN_PREFIX: A prefix to add before the username. E.g. `CN=`
+* DN: A suffix to be added after the user name. E.g. `,CN=Roles,CN=LDAPtest,DC=feedhenry,DC=com`
+
+# LDAP Connector API
 
 # AUTH [/cloud/auth]
 
