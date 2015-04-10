@@ -4,7 +4,7 @@ The FeedHenry Custom LDAP Connector.
 
 # Custom LDAP Connector API
 
-# AUTH [/auth]
+# AUTH [/cloud/auth]
 
 Bind against a LDAP server
 
