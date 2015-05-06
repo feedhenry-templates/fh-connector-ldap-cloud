@@ -35,7 +35,9 @@ function auth() {
   // See: https://github.com/senchalabs/connect#middleware for a list of Express 4 middleware
   bind.post('/', function(req, res) {
     //Must pass a username & password
-    if (!req.body.username || !req.body.password) {
+    var username = req.body.username || req.body.userId;  //native sdks send in userId
+    var password = req.body.password;
+    if (!username || !password) {
       return res.status(500).json({'status': 'error','message': 'You need to provide a username and password.'});
     }
 
@@ -49,8 +51,7 @@ function auth() {
 
     var DN_PREFIX = process.env.DN_PREFIX || "";
     var DN = process.env.DN || "";
-    var username = DN_PREFIX + req.body.username + DN;
-    var password = req.body.password
+    username = DN_PREFIX + username + DN;
 
     client.bind(username, password, function(err) {
       if (err) {
