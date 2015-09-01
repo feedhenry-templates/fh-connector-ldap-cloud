@@ -27,5 +27,8 @@
     "grunt-plato": "~1.0.0"
   },
   "license": "mit",
-  "main": "application.js"
+  "main": "application.js",
+  "scripts": {
+    "start": "node application.js"
+  }
 }
