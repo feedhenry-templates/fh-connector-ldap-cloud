@@ -1,4 +1,5 @@
 # FeedHenry Custom LDAP Connector
+[![Dependency Status](https://img.shields.io/david/feedhenry-templates/fh-connector-ldap-cloud.svg?style=flat-square)](https://david-dm.org/feedhenry-templates/fh-connector-ldap-cloud)
 
 The FeedHenry Custom LDAP Connector.
 
