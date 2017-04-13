@@ -83,7 +83,14 @@ All the tests are in the "test/" directory. The cloud app is using mocha as the 
 ### Unit tests
 
 ```shell
+npm run serve
 npm run unit
+```
+
+or
+
+```shell
+npm run test
 ```
 
 ### Unit coverage
