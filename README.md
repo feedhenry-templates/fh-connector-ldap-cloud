@@ -57,9 +57,9 @@ Validate a user against a LDAP server
 {
   "status": "unauthorised",
   "message": {
-    "dn": ""
-    "code": Error Code
-    "name": "The authorisation error name"
+    "dn": "",
+    "code": "Error Code",
+    "name": "The authorisation error name",
     "message": "The authorisation error message"
   }
 }
