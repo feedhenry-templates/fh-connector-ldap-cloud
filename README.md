@@ -1,61 +1,95 @@
 # FeedHenry Custom LDAP Connector
+
 [![Dependency Status](https://img.shields.io/david/feedhenry-templates/fh-connector-ldap-cloud.svg?style=flat-square)](https://david-dm.org/feedhenry-templates/fh-connector-ldap-cloud)
 
-The FeedHenry Custom LDAP Connector.
+* [The FeedHenry Custom LDAP Connector.](#the-feedhenry-custom-ldap-connector)
+  + [Required Environment Variables](#required-environment-variables)
+  + [AUTH](#auth)
+* [Tests](#tests)
+  + [Unit tests](#unit-tests)
+  + [Unit coverage](#unit-coverage)
 
-# Required Environment Variables
+## The FeedHenry Custom LDAP Connector.
+
+### Required Environment Variables
 
 * LDAP_URL : The URL of the LDAP server (including the ldap protocol). E.g. `ldap://testing.feedhenry.com`
 * DN_PREFIX: A prefix to be added before the username. E.g. `CN=`
 * DN: A suffix to be added after the user name. E.g. `,CN=Roles,CN=LDAPtest,DC=feedhenry,DC=com`
 
-# LDAP Connector API
-
-# AUTH [/cloud/auth]
-
-Bind against a LDAP server
-
-## AUTH [POST]
+### AUTH 
 
 Validate a user against a LDAP server
 
-+ Request (application/json)
+|              |              |
+|--------------|--------------|
+| Endpoint     | /cloud/auth  |
+| HTTP Method  | POST         |
 
-    + Body
 
-            {
-              "username": "users username",
-              "password": "users password"
-            }
+#### Request (application/json)
 
-+ Response 200 (application/json)
+##### Body
 
-    + Body
+```json
+{
+  "username": "users username",
+  "password": "users password"
+}
+```
 
-            {
-              "status": "ok",
-              "message": "Successfully Authenticated"
-            }
+#### Response 200 (application/json)
 
-+ Response 401 (application/json)
+##### Body
 
-    + Body
+```json
+{
+  "status": "ok",
+  "message": "Successfully Authenticated"
+}
+```
 
-            {
-              "status": "unauthorised",
-              "message": {
-                "dn": ""
-                "code": Error Code
-                "name": "The authorisation error name"
-                "message": "The authorisation error message"
-              }
-            }
+#### Response 401 (application/json)
 
-+ Response 500 (application/json)
+##### Body
 
-    + Body
+```json
+{
+  "status": "unauthorised",
+  "message": {
+    "dn": ""
+    "code": Error Code
+    "name": "The authorisation error name"
+    "message": "The authorisation error message"
+  }
+}
+```
 
-            {
-              "status": "error",
-              "message": "You need to provide a username and password."
-            }
+#### Response 500 (application/json)
+
+##### Body
+
+```json
+{
+  "status": "error",
+  "message": "You need to provide a username and password."
+}
+```
+
+## Tests
+
+All the tests are in the "test/" directory. The cloud app is using mocha as the test runner. 
+
+### Unit tests
+
+```shell
+npm run unit
+```
+
+### Unit coverage
+
+```shell
+npm run coverage
+```
+
+
