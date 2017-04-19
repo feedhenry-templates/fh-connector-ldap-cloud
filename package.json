@@ -1,6 +1,6 @@
 {
   "name": "fh-service-ldap-cloud",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "dependencies": {
     "express": "4.0.0",
     "fh-mbaas-api": "~6.1.7",
