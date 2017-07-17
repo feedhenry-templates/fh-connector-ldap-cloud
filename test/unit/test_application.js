@@ -79,7 +79,7 @@ exports['test express app listen is called'] = function(done) {
   runApp();
 
   mock.verify();
-  return done();
+  done();
 };
 
 exports['test all mbaas routes are mounted'] = function(done) {
